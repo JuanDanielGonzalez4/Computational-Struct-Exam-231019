@@ -108,7 +108,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   // First we should receive the value that is send with uart to set the value of the duty
-  HAL_UART_Receive_IT(&huart2, &value_duty, sizeof(value_duty));
+  HAL_UART_Receive_IT(&huart2, &value_duty[0,1], sizeof(value_duty));
   while (1)
   {
 	  	// We check if the value of duty received with uart is 00 between 99
@@ -122,7 +122,7 @@ int main(void)
 	  	/* We send the value of the current duty cycle with UART
 	  	to do this we set the uart we are using in this case the second one
 	  	then we specify our value and its size, and finally we set the delay*/
-		HAL_UART_Transmit(&huart2, &value_duty , sizeof(value_duty), 1);
+		HAL_UART_Transmit(&huart2, &value_duty[0,1] , 2, 1000);
 		// We change the brigthness of the led with 1 ms delay//
 		HAL_Delay(1000);
 
@@ -300,7 +300,7 @@ static void MX_GPIO_Init(void)
 // Callback for interruption
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	HAL_UART_Receive_IT(&huart2, &value_duty, sizeof(value_duty));
+	HAL_UART_Receive_IT(&huart2, &value_duty[0,1], sizeof(value_duty));
 }
 
 /* USER CODE END 4 */

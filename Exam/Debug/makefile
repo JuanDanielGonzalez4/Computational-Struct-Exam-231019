@@ -60,8 +60,8 @@ all: main-build
 main-build: Exam.elf secondary-outputs
 
 # Tool invocations
-Exam.elf Exam.map: $(OBJS) $(USER_OBJS) C:\Users\juang\OneDrive\Documentos\Estructuras\ Computacionales\Examen\Exam\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Exam.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\juang\OneDrive\Documentos\Estructuras Computacionales\Examen\Exam\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Exam.elf Exam.map: $(OBJS) $(USER_OBJS) C:\Users\juang\OneDrive\Documentos\Estructuras\ Computacionales\Examen\Computational-Estructures-Exam\Exam\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Exam.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\juang\OneDrive\Documentos\Estructuras Computacionales\Examen\Computational-Estructures-Exam\Exam\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Exam.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

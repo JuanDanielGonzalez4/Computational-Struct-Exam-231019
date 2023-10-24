@@ -1,0 +1,10 @@
+
+Exam/.cproject
+Exam/Core/Src/main.c
+Exam/Debug/Core/Src/main.cyclo
+Exam/Debug/Core/Src/main.o
+Exam/Debug/Core/Src/main.su
+Exam/Debug/Exam.elf
+Exam/Debug/Exam.list
+Exam/Debug/Exam.map
+Exam/Debug/makefile
